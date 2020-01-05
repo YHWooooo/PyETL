@@ -18,7 +18,7 @@ print('OK')
 
 headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'}
 
-for p in range(2, 10):
+for p in range(1, 11):
 
     page_url = 'https://www.104.com.tw/jobs/search/?ro=0&kwop=7&keyword=MySQL&order=15&asc=0&page={:d}&mode=s&jobsource=2018indexpoc'.format(p)
     resp = requests.get(page_url, headers=headers)
@@ -90,10 +90,10 @@ for p in range(2, 10):
     print(job_vac)
 
 
-    # with open('./104_config/104_columns.csv', 'a', newline='', encoding='utf-8') as cf:
-    #     writer = csv.writer(cf)
-    #     writer.writerows(job_vac)
-    #     print('OK')
+    with open('./104_config/104_columns.csv', 'a', newline='', encoding='utf-8') as cf:
+        writer = csv.writer(cf)
+        writer.writerows(job_vac)
+    print('OK')
 
 
 
